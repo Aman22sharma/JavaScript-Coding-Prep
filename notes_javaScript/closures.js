@@ -9,6 +9,13 @@
 
 - A closure is the combination of a function bundeled together with the lexical environment (references to its surrounding state).
 
+- ADVANTAGES OF CLOSURES
+* Fucntin Currying
+* Memoization (Caching the result/data)
+
+- Disadvantage 
+  Ocuppies lots of memeory && memory leakage
+
 */
 
 function x(){
@@ -32,4 +39,27 @@ function x() {
 }
 let result = x();
 result() // output 
+
+
+// Make a Counter using closure.
+
+function counter() {
+    var count = 0;
+
+    function increment() {
+        return count++;
+    }
+    return increment;
+}
+
+let Result = counter()
+console.log(Result())
+console.log(Result())
+console.log(Result())
+console.log(Result())
+
+/* OUTPUT : 0
+1
+2
+3 */
 
