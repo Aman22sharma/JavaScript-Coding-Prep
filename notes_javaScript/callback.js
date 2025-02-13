@@ -10,7 +10,7 @@ function showResult(sum) {
     console.log(sum)
 }
 
-function add(num1, num2, myCallback) {
+function myCalculator(num1, num2, myCallback) {
     let sum = num1 + num2;
     myCallback(sum);
 }
@@ -26,3 +26,14 @@ When you pass a function as an argument, remember not to use parenthesis.
 Right: myCalculator(5, 5, myDisplayer);
 
 Wrong: myCalculator(5, 5, myDisplayer()); */
+
+function display(a, b, add) {
+    var result = add(a, b)
+    console.log(result)
+}
+
+function add(a, b) {
+    return a + b;
+}
+
+display(10, 5, add); // Output - 15
